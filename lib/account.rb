@@ -9,6 +9,7 @@ class Account
     @pin_code = pin_code
     @balance = 0
     @exp_date = set_exp_date
+    @account_status = :active
   end
 
 private
@@ -20,4 +21,9 @@ private
   def set_exp_date
     Date.today.next_year(STANDARD_VALIDITY_YRS).strftime('%m/%Y')
   end
+
+  def deactivate
+  @account_status = :deactivated
+end
+
 end
