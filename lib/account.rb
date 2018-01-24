@@ -1,8 +1,9 @@
 require 'date'
 
 class Account
-  attr_accessor :pin_code, :balance, :account_status, :exp_date, :owner
-
+  attr_accessor :balance, :account_status, :owner
+  attr_reader :pin_code, :exp_date
+  
   STANDARD_VALIDITY_YRS = 5
 
   def initialize(args ={})
@@ -12,7 +13,11 @@ class Account
     @account_status = :active
   end
 
-private
+  #using an instance method is possible when you create
+  # a instance of a class, as we did
+  def deactivate
+    @account_status = :deactivated
+  end
 
   def pin_code
     rand(1000..9999)
@@ -22,10 +27,6 @@ private
     Date.today.next_year(STANDARD_VALIDITY_YRS).strftime('%m/%Y')
   end
 
-  #using an instance method is possible when you create
-  # a instance of a class, and we did it
-  def deactivate
-    @account_status = :deactivated
-  end
+
 
 end
