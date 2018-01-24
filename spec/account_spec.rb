@@ -3,7 +3,7 @@ require 'date'
 
 describe Account do
   let(:person) { instance_double('person', name: 'Lara') }
-  subject { described_class.new({owner: person})}
+  subject { described_class.new({owner: person })}
 
   it 'check length of a number' do
     number = 1234
@@ -20,9 +20,13 @@ describe Account do
     expect(subject.account_status).to eq :active
   end
 
-  it 'deactivates account using Instance method' do
-    subject.deactivate
+  it 'deactivates account using Class method' do
+    Account.deactivate(subject)
     expect(subject.account_status).to eq :deactivated
+  end
+
+  it 'is expected to have an owner' do
+    expect(subject.owner).to eq person
   end
 
 end
