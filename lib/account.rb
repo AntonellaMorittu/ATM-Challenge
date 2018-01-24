@@ -22,8 +22,10 @@ private
     Date.today.next_year(STANDARD_VALIDITY_YRS).strftime('%m/%Y')
   end
 
+  #using an instance method is possible when you create
+  # a instance of a class, and we did it
   def deactivate
-  @account_status = :deactivated
-end
+    @account_status = :deactivated
+  end
 
 end
