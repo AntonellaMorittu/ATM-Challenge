@@ -27,7 +27,7 @@ end
   end
 
   it 'allow withdraw if account has enough balance.' do
-      expected_output = { status: true, message: 'success', date: Date.today, amount: 45 }
+      expected_output = { status: true, message: 'success', date: Date.today, amount: 45, bills: [20, 20, 5]}
       expect(subject.withdraw(45, "1234", account)).to eq expected_output
   end
 
@@ -46,7 +46,7 @@ end
     allow(account).to receive(:account_status).and_return(:inactive)
     expected_output = { status: false, message: 'account inactive', date: Date.today }
     expect(subject.withdraw(6, '1234', account))
-  
+
   end
 
 end
