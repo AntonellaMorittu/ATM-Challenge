@@ -11,12 +11,7 @@ class Account
     @balance = 0
     @exp_date = set_exp_date
     @account_status = :active
-  end
-
-  #using an instance method is possible when you create
-  # a instance of a class, as we did
-  def deactivate
-    @account_status = :deactivated
+    @owner = set_owner(args[:owner])
   end
 
   def pin_code
@@ -31,4 +26,13 @@ class Account
     account.account_status = :deactivated
   end
 
+  private
+
+  def set_owner(obj)
+    obj.nil? ? missing_owner : @owner = obj
+  end
+
+  def missing_owner
+    raise "An Account owner is required"
+  end
 end
