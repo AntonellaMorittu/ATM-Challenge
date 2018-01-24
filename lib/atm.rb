@@ -16,7 +16,7 @@ class Atm
       { status: false, message: 'wrong pin', date: Date.today }
     elsif card_expired?(account.exp_date)
       { status: false, message: 'card expired', date: Date.today }
-    when account_inactive?(account.account_status)
+    elsif account_inactive?(account.account_status)
       { status: false, message: 'account inactive', date: Date.today }
     else
       perform_transaction(amount, account)
