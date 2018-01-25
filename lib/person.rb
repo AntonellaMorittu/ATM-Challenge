@@ -24,7 +24,7 @@ end
 #here we have to define the missing_name method to return a message
 def missing_name
   raise "A name is required"
-end
+  end
 
 #define the function create_account
 def create_account()
@@ -35,5 +35,14 @@ def create_account()
 def deposit(amount)
     @account.balance += amount
     @cash -= amount
-end
+  end
+
+def deposit(amount)
+    account.nil? ? missing_account : @account = account
+  end
+
+def missing_account
+  raise "No account present"
+  end
+
 end
