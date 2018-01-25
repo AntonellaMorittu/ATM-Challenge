@@ -14,17 +14,6 @@ def initialize(arg={})#initialize takes arguments, information stored in between
     @cash = 0
 end
 
-<<<<<<< HEAD
-def initialize (arg={})
-    @name = set_name(arg[:name])
-end
-
-def no_name
-  if @name == nil
-     raise 'A name is required'
-   end
-end
-=======
 #ternary operator (line 21) a ? b : c
 def set_name(subjectName) #method set_name
   #if the subject name is nil then return missing_name,
@@ -42,5 +31,4 @@ def create_account()
     #the account can be created (Account.new) with the subject(self) as owner
     @account = Account.new(owner: self)
   end
->>>>>>> d85faff3ce11859abc12c709b0bc2eb12e0228dd
 end
