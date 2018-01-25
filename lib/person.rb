@@ -14,10 +14,6 @@ def initialize(arg={})#initialize takes arguments, information stored in between
     @cash = 0
 end
 
-def initialize (arg={})
-    @name = set_name(arg[:name])
-end
-
 def no_name
   if @name == nil
      raise 'A name is required'
