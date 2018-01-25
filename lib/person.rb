@@ -1,6 +1,6 @@
 require './lib/account.rb'
 require './lib/atm'
-require 'pry'
+
 
 class Person
   #information stored in the class we want to access
