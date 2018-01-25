@@ -1,12 +1,13 @@
 class Person
   attr_accessor :name, :cash, :account
 
-def initialize
-    @name = (name)
+def initialize (arg={})
+    @name = set_name(arg[:name])
 end
 
-def name
-  name = :name
+def no_name
+  if @name == nil
+     raise 'A name is required'
+   end
 end
-
 end
