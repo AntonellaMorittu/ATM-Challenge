@@ -14,15 +14,6 @@ def initialize(arg={})#initialize takes arguments, information stored in between
     @cash = 0
 end
 
-<<<<<<< HEAD
-def no_name
-  if @name == nil
-     raise 'A name is required'
-   end
-end
-
-=======
->>>>>>> 68d3526576c2c0c34572b213f4c3a35d007bdf50
 #ternary operator (line 21) a ? b : c
 def set_name(subjectName) #method set_name
   #if the subject name is nil then return missing_name,
@@ -40,8 +31,9 @@ def create_account()
     #the account can be created (Account.new) with the subject(self) as owner
     @account = Account.new(owner: self)
   end
-<<<<<<< HEAD
 
-=======
->>>>>>> 68d3526576c2c0c34572b213f4c3a35d007bdf50
+def deposit(amount)
+    @account.balance += amount
+    @cash -= amount
+end
 end
