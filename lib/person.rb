@@ -1,4 +1,4 @@
-require './lib/account.rb'
+ require './lib/account.rb'
 require './lib/atm'
 
 
@@ -53,12 +53,12 @@ def withdraw(args = {})
 end
 
 def withdraw_funds(args)
-  args[:atm] == nil ? missing_atm : atm = args[:atm]
+  args[:atm].nil? ? missing_atm : atm = args[:atm]
   account = @account
   amount = args[:amount]
   pin = args[:pin]
   response = atm.withdraw(amount, pin, account)
-  response[:status] == true ? increase_cash(response) : response
+  response[:status] ? increase_cash(response) : response
 end
 
 def increase_cash(response)

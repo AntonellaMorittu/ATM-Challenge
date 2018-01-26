@@ -3,7 +3,6 @@ require 'date'
 class Account
   attr_accessor :balance, :account_status, :owner
   attr_reader :pin_code, :exp_date
-
   STANDARD_VALIDITY_YRS = 5
 
   def initialize(args ={})
