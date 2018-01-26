@@ -10,6 +10,10 @@ before do
   allow(account).to receive(:balance=)
 end
 
+  it 'has 1000 when initialized' do
+   expect(subject.funds).to eq 1000
+  end
+  
   it 'rejects withdraw if account has insufficient funds' do
     expected_output = { status: false, message: 'insufficient funds in account', date: Date.today }
     expect(subject.withdraw(105, '1234', account)).to eq expected_output

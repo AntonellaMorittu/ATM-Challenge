@@ -14,8 +14,6 @@ class Account
     @owner = set_owner(args[:owner])
   end
 
-
-
   def self.deactivate(account)
     account.account_status = :deactivated
   end
