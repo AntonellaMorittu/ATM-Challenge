@@ -26,6 +26,29 @@ describe Person do
   end
 
   #we have to require the Account lib file on our lib file to access the information stored in it.
+<<<<<<< HEAD
+  describe 'can create an Account' do
+    #before testing what's next, rspec needs to create an account with subject info in it
+    before { subject.create_account }
+    it 'of Account class ' do
+      expect(subject.account).to be_an_instance_of Account
+    end
+    it 'with himself as an owner' do
+      expect(subject.account.owner).to be subject
+    end
+  end
+
+  describe 'can manage funds if an account been created' do
+    let(:atm) { Atm.new }
+    # As a Person with a Bank Account,
+    # in order to be able to put my funds in the account ,
+    # i would like to be able to make a deposit
+    before { subject.create_account }
+    it 'can deposit funds' do
+      expect(subject.deposit(100)).to be_truthy
+    end
+end
+=======
 describe 'can create an Account' do
   #before testing what's next, rspec needs to create an account with subject info in it
   before { subject.create_account }
@@ -55,6 +78,7 @@ describe 'can manage funds if an account been created' do
     command = lambda { subject.withdraw(amount: 100, pin: subject.account.pin_code, account: subject.account, atm: atm) }
     expect(command.call).to be_truthy
   end
+>>>>>>> 66d158d2c2dcc1a533235fff20a503face48c017
 
   it 'withdraw is expected to raise error if no ATM is passed in' do
     command = lambda { subject.withdraw(amount: 100, pin: subject.account.pin_code, account: subject.account) }
